@@ -3,10 +3,11 @@
 
 ### Major Changes
 * `RealmResults<T>` can be observed for granular changes via the new `SubscribeForNotifications` method.
+* `RealmResults<T>` received a new `ToNotifyCollectionChanged` extension method which produces an `ObservableCollection<T>`-like wrapper suitable for MVVM data binding.
 
 ### Breaking Changes
 * File format of Realm files is changed. Files will be automatically upgraded but opening a Realm file with older versions of Realm is not possible.
-* `RealmResults<T>` no longer implicitly implements `INotifyCollectionChanged`.
+* `RealmResults<T>` no longer implicitly implements `INotifyCollectionChanged`. Use the new `ToNotifyCollectionChanged` method instead.
 
 Work in progress
 ----------------
